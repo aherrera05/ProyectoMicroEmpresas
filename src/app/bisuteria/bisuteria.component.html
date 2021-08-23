@@ -1,0 +1,54 @@
+<div class="container">
+    <p>bisuteria works!</p>
+  </div>
+
+  <div class="position-relative container">
+
+    <div class="row justify-content-center">
+      <div class="card mt-sm-3 col-md-8">
+        <div class="card-body">
+          <h3 class="mb-0">Bisuteria Directory</h3>
+          <div class="form-group">
+            <div class="form-label"><strong>For:</strong>
+              {{ query }}
+            </div>
+            <input class="form-control mt-2" type="text"
+            [(ngModel)] = "query">
+          
+          </div><!-- form-group -->
+        </div><!-- card-body -->
+      </div><!-- card -->
+    </div><!-- row -->
+  
+    <div class="position-absolute container" style="left: 0; z-index:10">
+      <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action flex-column align-items-start"
+            *ngFor="let bisuteria of bisuteria"
+            (click)="showBisuteria(bisuteria)"
+            [style.background]="bisuteria.highlight ? '#eee' : '#fff'">
+                <div class="media">
+                  <img class="mr-3 rounded align-self-center img-fluid" style="width:70px" 
+                    [src]="'./assets/images/' + bisuteria.name + '_td.jpg'"
+                    [alt]="'Photo of ' + bisuteria.name"
+                  >
+                  <div class="media-body align-self-center">
+                    <h5 class="m-0">{{ bisuteria.name }}</h5>
+                    {{ bisuteria.description }}
+                  </div><!-- media body -->
+                  <div class="media-body align-self-center">
+                    <h5 class="m-0">{{ bisuteria.name }}</h5>
+                    {{ bisuteria.price }}
+                  </div><!-- media body -->
+                </div><!-- media -->
+            </a><!-- link -->
+          </div><!-- list-group -->
+        </div><!-- col -->
+      </div><!-- row -->
+    </div><!-- container -->
+  
+  </div>
+  
+  
+  
