@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgModule } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 interface IBisuteria {
   name: string,
@@ -14,16 +15,18 @@ interface IBisuteria {
   styleUrls: ['./bisuteria.component.css']
 })
 export class BisuteriaComponent  {
+  precio: number;
   query: string;
   bisuteria: IBisuteria[];
   constructor() { 
 
    this.query = 'Anillos';
+   this.precio = 1500
     this.bisuteria = [
       {
         "name":"anillos",
         "price":1500,
-        "description":"Collar hecho de material reciclado"
+        "description":"Trío de anillos de acero"
         
       },
       {
@@ -38,13 +41,9 @@ export class BisuteriaComponent  {
       {
         "name":"aretes1",
         "price":5000,
-        "description":"Tres pares de aretes de acero"
+        "description":"Aretes de acero"
       },
-      {
-        "name":"pulsera",
-        "price":2500,
-        "description":"Pulsera de piedritas finas"
-      },
+      
       {
         "name":"anillos1",
         "price":4500,
@@ -61,6 +60,8 @@ export class BisuteriaComponent  {
 
   showBisuteria(bisuteria: IBisuteria) {
     this.query = bisuteria.name;
+    this.precio = bisuteria.price;
     bisuteria.highlight = !bisuteria.highlight;
+     
   }  
 }

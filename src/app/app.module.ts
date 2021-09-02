@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
+import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import {MatMenuModule} from '@angular/material/menu';
 
@@ -20,6 +21,7 @@ import { BisuteriaComponent } from './bisuteria/bisuteria.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    
     BrowserAnimationsModule,
     MatMenuModule,
     FormsModule

@@ -23,7 +23,7 @@ describe('BisuteriaComponent', () => {
   it(`should have as title 'angularTwoWayDatabinding'`, () => {
     const fixture = TestBed.createComponent(BisuteriaComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angularTwoWayDatabinding');
+    expect(app.query).toEqual('angularTwoWayDatabinding');
   });
 
   it('should render title', () => {
