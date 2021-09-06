@@ -44,13 +44,22 @@
             </div>
             <!--<input class="form-control mt-2" type="text"
             [(ngModel)] = "precio">-->
-           
+            <button id="boton-seleccionar" class="btn btn-danger">Seleccionar </button>
           
           </div><!-- form-group -->
+          
         </div><!-- card-body -->
       </div><!-- card -->
     </div><!-- row -->
   
+    <div class="container">
+      <div class="row">
+          <!-- Elementos generados a partir del JSON -->
+          <main id="items" class="col-sm-8 row"></main>
+          <!-- Carrito -->
+          
+      </div>
+  </div>
   
     <div class="position-absolute container" style="left: 0; z-index:10">
       <div class="row justify-content-center">
@@ -73,6 +82,8 @@
                     <h5 class="m-0">{{ bisuteria.name }}</h5>
                     {{ bisuteria.price }}
                   </div><!-- media body -->
+
+                  
                 </div><!-- media -->
             </a><!-- link -->
           </div><!-- list-group -->
@@ -81,6 +92,19 @@
     </div><!-- container -->
   </div>
 
+  <aside class="col-sm-4">
+    <h2>Carrito</h2>
+    <!-- Elementos del carrito -->
+    <ul id="carrito" class="list-group"></ul>
+    
+    <hr>
+    <!-- Precio total -->
+    <input type="text" id="nombre" placeholder="Articulo">
+    <input type="text" id="precio" placeholder="Precio">
+    <p class="text-right">Total: <span id="total"></span>&euro;</p>
+    <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
+    <button id="boton-comprar" class="btn btn-danger">Comprar</button>
+</aside>
   <footer class="bg-light text-center text-white">
     <!-- Grid container -->
     <div class="container p-4 pb-0">
